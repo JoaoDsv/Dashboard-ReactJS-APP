@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
+// Component
 class ListProfil extends React.Component {
   constructor(props, context) {
     super(props, context)
@@ -16,6 +17,9 @@ class ListProfil extends React.Component {
         '#9b59b6', // Purple
       ],
     }
+
+    // Binding to make `this` work in the callback
+    // this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   // Fetch data once the component is mounted
@@ -44,7 +48,7 @@ class ListProfil extends React.Component {
 
     // Return this for each element of the list
     return profilStore.listProfil.map((profil) => {
-      // Build const, replacing boolean by the right value
+      // Build const, replacing boolean by the associated litteral expression
       const sexe = profil.sexe === 0 ? 'Femme' : 'Homme'
 
       // Display this div for each element of the list

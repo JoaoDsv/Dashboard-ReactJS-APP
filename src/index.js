@@ -4,7 +4,7 @@ import logger from 'redux-logger'
 import ReactDOM from 'react-dom'
 import React from 'react'
 
-import './assets/css/index.css'
+import '../build/styles/master.css'
 import allReducers from './reducers'
 import Routes from './routes'
 import registerServiceWorker from './registerServiceWorker'
