@@ -2,7 +2,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import React from 'react'
 
 import App from './app/App'
-import ListProfilContainer from './app/profil/containers/ListProfilContainer'
+import ListProfilContainer from './app/profil/containers'
+import TabPlayersContainer from './app/players/containers'
 import NotFound from './app/notFound/NotFound'
 
 
@@ -13,6 +14,7 @@ function Routes() {
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/profils" component={ListProfilContainer} />
+        <Route path="/players" component={TabPlayersContainer} />
         <Route path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>

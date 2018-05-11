@@ -55,7 +55,7 @@ class ListProfil extends React.Component {
       return (
         <div key={profil.id} className="row-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
           {profil.id} - {sexe} {profil.age} ans, {profil.departement}000, {profil.date_inscription}
-          <div className="row-border" />
+          <div className="row-container__border" />
         </div>
       )
     })

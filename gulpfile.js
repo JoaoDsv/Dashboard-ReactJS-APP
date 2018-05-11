@@ -5,7 +5,7 @@ const stylus = require('gulp-stylus')
 gulp.task('styles', () => {
   gulp.src('./src/assets/styles/master.styl')
     .pipe(stylus())
-    .pipe(gulp.dest('./build/styles'))
+    .pipe(gulp.dest('./src/build/styles'))
 })
 
 // Gulp task to watch at .styl changes to auto re-compile
