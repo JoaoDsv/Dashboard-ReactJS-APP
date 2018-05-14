@@ -12,7 +12,7 @@ const mapStateToProps = state => ({ playersStore: state.playersReducer })
 // Allow component to dispatch specific actions by props
 const mapDispatchToProps = dispatch => ({
 
-  // ACTION: Get a list of players profiles
+  // ACTION: Get a list of players segmentations
   getPlayersSegmentation: async () => {
     try {
       // Display loader when waiting for response

@@ -29,7 +29,7 @@ class ChartPlayersSegmentation extends React.Component {
 
   render() {
     return (
-      <div className="chart-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div className="chart-container">
         <h3>Pourcentages de joueurs par catégorie</h3>
 
         {this.props.loading ?
@@ -38,12 +38,12 @@ class ChartPlayersSegmentation extends React.Component {
             loading={this.props.loading}
           />
         :
-          <ResponsiveContainer width="60%" height={300}>
+          <ResponsiveContainer width="100%" height={300}>
             <BarChart
               width={600}
               height={300}
               data={this.state.fakeData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 20, right: 0, left: 0, bottom: 5 }}
             >
               <Legend
                 layout="vertical"
@@ -55,15 +55,15 @@ class ChartPlayersSegmentation extends React.Component {
               <YAxis />
               <Tooltip />
 
-              <Bar dataKey="prevFirst" stackId="previousWeek" fill="#8884df" barSize={20} />
-              <Bar dataKey="prevSecond" stackId="previousWeek" fill="#82ca9f" barSize={20} />
-              <Bar dataKey="prevThird" stackId="previousWeek" fill="#888a98" barSize={20} />
-              <Bar dataKey="prevFourth" stackId="previousWeek" fill="#188a9f" barSize={20} />
+              <Bar dataKey="prevFirst" stackId="previousWeek" fill="#6c6c6c" barSize={20} />
+              <Bar dataKey="prevSecond" stackId="previousWeek" fill="#7c7c7c" barSize={20} />
+              <Bar dataKey="prevThird" stackId="previousWeek" fill="#8c8c8c" barSize={20} />
+              <Bar dataKey="prevFourth" stackId="previousWeek" fill="#9d9d9d" barSize={20} />
 
-              <Bar dataKey="first" stackId="currentWeek" fill="#8884d8" barSize={60} />
-              <Bar dataKey="second" stackId="currentWeek" fill="#82ca9d" barSize={60} />
-              <Bar dataKey="third" stackId="currentWeek" fill="#888a9d" barSize={60} />
-              <Bar dataKey="fourth" stackId="currentWeek" fill="#188a9a" barSize={60} />
+              <Bar dataKey="first" stackId="currentWeek" fill="#800080" barSize={60} />
+              <Bar dataKey="second" stackId="currentWeek" fill="#8B008B" barSize={60} />
+              <Bar dataKey="third" stackId="currentWeek" fill="#9932CC" barSize={60} />
+              <Bar dataKey="fourth" stackId="currentWeek" fill="#DA70D6" barSize={60} />
             </BarChart>
           </ResponsiveContainer>
         }
@@ -75,9 +75,6 @@ class ChartPlayersSegmentation extends React.Component {
 ChartPlayersSegmentation.propTypes = {
   data: PropTypes.object,
   loading: PropTypes.bool,
-  showTitle: PropTypes.bool,
-  showLegend: PropTypes.bool,
-  legendPosition: PropTypes.string,
 }
 
 ChartPlayersSegmentation.defaultProps = {

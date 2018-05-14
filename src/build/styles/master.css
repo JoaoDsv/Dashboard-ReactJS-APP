@@ -3,27 +3,46 @@ body {
   margin: 0;
 }
 body {
-  background-color: #fff;
+  background-color: $white;
   font-family: 'Roboto', sans-serif;
-  color: #2f3542;
+  color: #fff;
 }
-.app {
-  text-align: center;
+.app-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
 }
-.app-footer {
+.tab-container {
+  display: inline-block;
+  height: 100%;
+  background-color: #6c6c6c;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.chart-container {
+  width: 600px;
+  background-color: #494949;
+}
+h3 {
+  font-size: 1em;
+  font-weight: 400;
+  padding: 20px 0 10px 20px;
+  border-bottom: 1px solid #6c6c6c;
+}
+.footer-container {
   margin-top: 50px;
 }
-.app-header {
+.header-container {
   height: 150px;
+  text-align: center;
   color: #fff;
   background-color: #222;
   padding: 20px;
 }
-.app-header__logo {
+.header-logo {
   height: 80px;
   animation: app-logo-spin infinite 20s linear;
 }
-.app-header__title {
+.header-title {
   font-size: 1.5em;
 }
 @-moz-keyframes app-logo-spin {
@@ -70,7 +89,7 @@ h2 {
   height: 50px;
   line-height: 50px;
   text-align: left;
-  color: #2f3542;
+  color: $purpleText;
   white-space: nowrap;
   padding: 0 20px;
 }
@@ -92,7 +111,7 @@ h2 {
   height: 150px;
   vertical-align: top;
   text-align: center;
-  color: #2f3542;
+  color: $purpleText;
   margin: 20px 30px;
   border: 2px solid #dfe4ea;
 }
@@ -106,6 +125,25 @@ h2 {
 .card-content {
   padding: 10px;
   height: 100px;
+}
+.side-menu-container {
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  vertical-align: top;
+  background-color: #404040;
+  color: #a1a1a1;
+}
+.side-menu-container a {
+  color: #000;
+  text-decoration: none;
+}
+.side-menu_link {
+  color: #f00;
+  text-decoration: none;
+}
+.side-menu_item {
+  color: #00f;
 }
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 .css-1wvv9v7 {

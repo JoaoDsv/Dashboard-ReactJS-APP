@@ -22,7 +22,7 @@ class TabPlayers extends React.Component {
 
   render() {
     return (
-      <div className="tab-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div className="tab-container col-xs-9 col-sm-9 col-md-9 col-lg-9">
         <h2>Tab players</h2>
         <ChartPlayersSegmentation
           loading={this.props.playersStore.segmentationLoading}
