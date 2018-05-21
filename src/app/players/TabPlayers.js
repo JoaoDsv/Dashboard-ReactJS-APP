@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ChartPlayersSegmentation from './ChartPlayersSegmentation'
+import ChartPlayersBet from './ChartPlayersBet'
 
 
 // Component
@@ -23,11 +24,36 @@ class TabPlayers extends React.Component {
   render() {
     return (
       <div className="tab-container col-xs-9 col-sm-9 col-md-9 col-lg-9">
-        <h2>Tab players</h2>
-        <ChartPlayersSegmentation
-          loading={this.props.playersStore.segmentationLoading}
-          data={this.props.playersStore.segmentationData}
-        />
+        <div className="left-chart-group-container" >
+          <ChartPlayersSegmentation
+            loading={this.props.playersStore.segmentationLoading}
+            data={this.props.playersStore.segmentationData}
+          />
+          <ChartPlayersSegmentation
+            loading={this.props.playersStore.segmentationLoading}
+            data={this.props.playersStore.segmentationData}
+          />
+        </div>
+        <div className="right-chart-group-container" >
+          <ChartPlayersBet
+            showTitle
+            loading={this.props.playersStore.segmentationLoading}
+            data={this.props.playersStore.segmentationData}
+            subtitle="exclusifs"
+          />
+          <ChartPlayersBet
+            showTitle={false}
+            loading={this.props.playersStore.segmentationLoading}
+            data={this.props.playersStore.segmentationData}
+            subtitle="mixtes"
+          />
+          <ChartPlayersBet
+            showTitle={false}
+            loading={this.props.playersStore.segmentationLoading}
+            data={this.props.playersStore.segmentationData}
+            subtitle="duplicants"
+          />
+        </div>
       </div>
     )
   }

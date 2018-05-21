@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "gulp": "^3.9.1",
     "gulp-stylus": "^2.7.0",
+    "history": "^4.7.2",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
