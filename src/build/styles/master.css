@@ -1,0 +1,169 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  height: 100%;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  background-color: #6c6c6c;
+}
+.app-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  height: 100%;
+}
+.side-menu-container {
+  width: 220px;
+  height: 100%;
+  vertical-align: top;
+  color: #a1a1a1;
+  background-color: #404040;
+}
+.tab-container {
+  height: 100%;
+  vertical-align: top;
+  background-color: #6c6c6c;
+  box-sizing: border-box;
+  padding: 40px;
+}
+.chart-container {
+  font-size: 0.8em;
+  background-color: #494949;
+  margin: 0 0 10px 0;
+}
+h3 {
+  font-size: 1.3em;
+  font-weight: 400;
+  padding: 20px 0 10px 20px;
+  border-bottom: 1px solid #6c6c6c;
+  margin: 0 0 10px 0;
+}
+h4 {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  text-indent: -80px;
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+h2 {
+  text-align: left;
+  font-size: 2em;
+  margin: 40px 20px;
+}
+.list-container {
+  margin-bottom: 50px;
+}
+.row-container {
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  color: $purpleText;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+.row-container::hover {
+  background-color: $darkGray;
+}
+.row-border {
+  width: 95%;
+  margin: auto;
+  border-bottom: 1px solid #dfe4ea;
+}
+.cards-container {
+  margin: 0 50px 50px;
+  text-align: left;
+}
+.card-container {
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  vertical-align: top;
+  text-align: center;
+  color: $purpleText;
+  margin: 20px 30px;
+  border: 2px solid #dfe4ea;
+}
+.card-title {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #dfe4ea;
+  line-height: 30px;
+}
+.card-content {
+  padding: 10px;
+  height: 100px;
+}
+.user-profile-container {
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 30px 0;
+}
+.fdj-logo {
+  display: block;
+  height: 60px;
+  width: 100px;
+  margin: auto;
+}
+.user-profile_picture {
+  display: block;
+  height: 70px;
+  width: 70px;
+  background-color: #0ff;
+  border-radius: 50%;
+  margin: auto;
+}
+.user-profile_name {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 10px 0 0 0;
+}
+.user-profile_job {
+  color: #a1a1a1;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-align: center;
+  margin: 5px 0 0 0;
+}
+.side-menu_icon {
+  vertical-align: middle;
+  margin: 8px 0 8px 40px;
+}
+.side-menu_label {
+  position: relative;
+  font-size: 0.95em;
+  text-indent: -6px;
+  vertical-align: middle;
+  margin: 8px 0 8px 0;
+}
+.side-menu_arrow {
+  position: absolute;
+  top: -0.4em;
+  right: -50px;
+  vertical-align: middle;
+}
+.left-chart-group-container {
+  display: inline-block;
+  vertical-align: top;
+}
+.right-chart-group-container {
+  display: inline-block;
+  vertical-align: top;
+}
+.player-segmentation-chart {
+  width: 600px;
+}
+.player-bet-chart {
+  width: 300px;
+  margin: 0 0 0 40px;
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+.css-1wvv9v7 {
+  left: calc(50% - 30px);
+}
