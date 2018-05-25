@@ -2,7 +2,9 @@ import * as ACTION_TYPES from '../../../assets/constants/actionTypes'
 
 export const initialState = {
   segmentationLoading: true,
-  segmentationData: {},
+  segmentationData: [],
+  betLoading: true,
+  betData: [],
 }
 
 export default function store(state = initialState, action) {
@@ -20,28 +22,18 @@ export default function store(state = initialState, action) {
       break
     case ACTION_TYPES.GET_PLAYERS_SEGMENTATION_FAILURE:
       newState.segmentationLoading = false
-      newState.segmentationData = {
-        labels: [
-          'EXCLUSIFS',
-          'MIXTES',
-          'DUPLICANTS',
-        ],
-        datasets: [
-          {
-            label: 'Population',
-            data: [
-              20,
-              15,
-              25,
-            ],
-            backgroundColor: [
-              '#f39c12', // Orange
-              '#2ecc71', // Green
-              '#9b59b6', // Purple
-            ],
-          },
-        ],
-      }
+      newState.segmentationData = []
+      break
+    case ACTION_TYPES.GET_PLAYERS_BET_LOADING:
+      newState.betLoading = true
+      break
+    case ACTION_TYPES.GET_PLAYERS_BET_SUCCESS:
+      newState.betLoading = false
+      newState.betData = action.payload.data
+      break
+    case ACTION_TYPES.GET_PLAYERS_BET_FAILURE:
+      newState.betLoading = false
+      newState.betData = []
       break
     default:
       break

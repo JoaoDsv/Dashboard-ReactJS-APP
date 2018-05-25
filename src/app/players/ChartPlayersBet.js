@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BounceLoader } from 'react-spinners'
 
-import { PieChart, Pie, Tooltip, Legend } from 'recharts'
+import { PieChart, Pie, Tooltip, Legend, Cell } from 'recharts'
 
 
 // Pie chart component, showing payers' bets
@@ -10,28 +10,18 @@ class ChartPlayersBet extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      fakeData: [
-        { segm: 'EXCLUSIFS', value: 4000, fill: '#8c8c8c' },
-        { segm: 'MIXTES', value: 3000, fill: '#9932CC' },
-        { segm: 'DUPLICANTS', value: 2000, fill: '#DA70D6' },
-      ],
       legend: [
-        { value: '< 10€', type: 'rect', color: '#8c8c8c', id: 'fifty' },
-        { value: '10 à 20€', type: 'rect', color: '#9932CC', id: 'thirty' },
-        { value: '> 20€', type: 'rect', color: '#DA70D6', id: 'twenty' },
+        { value: '< 10€', type: 'rect', color: '#67C3CB' },
+        { value: '10 à 20€', type: 'rect', color: '#734696' },
+        { value: '> 20€', type: 'rect', color: '#E94171' },
       ],
     }
   }
 
-  // Fetch data once the component is mounted
-  componentDidMount() {
-  }
-
-
   render() {
     return (
-      <div className="chart-container player-bet-chart">
-        {this.props.showTitle && <h3>Mise moyenne par partie</h3>}
+      <div className={`chart-container pie-chart player-bet-chart ${this.props.showTitle && 'show-pie-title'}`}>
+        {this.props.showTitle && <h3>Mises par catégorie</h3>}
 
         {this.props.loading ?
           <BounceLoader
@@ -39,23 +29,13 @@ class ChartPlayersBet extends React.Component {
             loading={this.props.loading}
           />
         :
-          <div className="pie-container">
+          <div className="pie-wrapper">
             <PieChart
               width={310}
               height={220}
               margin={{ top: 30, right: 0, left: 0, bottom: 0 }}
 
             >
-              <Pie
-                data={this.state.fakeData}
-                dataKey="value"
-                nameKey="segm"
-                innerRadius={50}
-                outerRadius={70}
-                fill="#82ca9d"
-                label
-              />
-              <Tooltip wrapperStyle={{ backgroundColor: '#2e2e2e' }} />
               <Legend
                 payload={this.state.legend}
                 verticalAlign="middle"
@@ -64,6 +44,22 @@ class ChartPlayersBet extends React.Component {
                 align="right"
                 wrapperStyle={{ right: 5 }}
               />
+              <Tooltip
+                wrapperStyle={{ backgroundColor: '#2e2e2e' }}
+              />
+              <Pie
+                data={this.props.data}
+                dataKey="betsCount"
+                nameKey="betsAmount"
+                innerRadius={50}
+                outerRadius={70}
+                label
+              >
+                <Cell fill="#67C3CB" />
+                <Cell fill="#734696" />
+                <Cell fill="#E94171" />
+              </Pie>
+
             </PieChart>
             <h4>
               {!!this.props.subtitle && this.props.subtitle}
@@ -76,14 +72,14 @@ class ChartPlayersBet extends React.Component {
 }
 
 ChartPlayersBet.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
   loading: PropTypes.bool,
   showTitle: PropTypes.bool,
   subtitle: PropTypes.string,
 }
 
 ChartPlayersBet.defaultProps = {
-  data: {},
+  data: [],
   loading: true,
   showTitle: true,
   subtitle: '',

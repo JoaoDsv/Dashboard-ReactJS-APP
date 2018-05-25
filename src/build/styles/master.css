@@ -14,23 +14,33 @@ body {
   height: 100%;
 }
 .side-menu-container {
-  width: 220px;
+  width: 250px;
   height: 100%;
   vertical-align: top;
-  color: #a1a1a1;
-  background-color: #404040;
+  color: #707070;
+  background-color: #383838;
 }
 .tab-container {
   height: 100%;
   vertical-align: top;
+  text-align: center;
   background-color: #6c6c6c;
   box-sizing: border-box;
   padding: 40px;
 }
 .chart-container {
   font-size: 0.8em;
-  background-color: #494949;
+  background-color: #484848;
   margin: 0 0 10px 0;
+}
+.bar-chart {
+  height: 425px;
+  width: 600px;
+}
+.pie-chart {
+  height: 270px;
+  width: 300px;
+  margin: 0 0 0 40px;
 }
 h3 {
   font-size: 1.3em;
@@ -49,74 +59,26 @@ h4 {
   padding: 0 0 20px 0;
   margin: 0;
 }
-h2 {
-  text-align: left;
-  font-size: 2em;
-  margin: 40px 20px;
-}
-.list-container {
-  margin-bottom: 50px;
-}
-.row-container {
-  height: 50px;
-  line-height: 50px;
-  text-align: left;
-  color: $purpleText;
-  white-space: nowrap;
-  padding: 0 20px;
-}
-.row-container::hover {
-  background-color: $darkGray;
-}
-.row-border {
-  width: 95%;
-  margin: auto;
-  border-bottom: 1px solid #dfe4ea;
-}
-.cards-container {
-  margin: 0 50px 50px;
-  text-align: left;
-}
-.card-container {
-  display: inline-block;
-  width: 200px;
-  height: 150px;
-  vertical-align: top;
-  text-align: center;
-  color: $purpleText;
-  margin: 20px 30px;
-  border: 2px solid #dfe4ea;
-}
-.card-title {
-  font-size: 1em;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #dfe4ea;
-  line-height: 30px;
-}
-.card-content {
-  padding: 10px;
-  height: 100px;
-}
 .user-profile-container {
-  height: 200px;
+  height: 230px;
   width: 100%;
   text-align: center;
-  padding: 20px 0 30px 0;
+  padding: 40px 0 40px 0;
 }
 .fdj-logo {
   display: block;
-  height: 60px;
+  height: 50px;
   width: 100px;
   margin: auto;
 }
 .user-profile_picture {
   display: block;
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 80px;
   background-color: #0ff;
   border-radius: 50%;
   margin: auto;
+  margin-top: 40px;
 }
 .user-profile_name {
   color: #fff;
@@ -125,7 +87,7 @@ h2 {
   margin: 10px 0 0 0;
 }
 .user-profile_job {
-  color: #a1a1a1;
+  color: #707070;
   font-size: 0.8em;
   font-weight: 400;
   text-align: center;
@@ -148,6 +110,10 @@ h2 {
   right: -50px;
   vertical-align: middle;
 }
+.ecredits-amount-chart {
+  height: 425px;
+  margin: 0 0 10px 40px;
+}
 .left-chart-group-container {
   display: inline-block;
   vertical-align: top;
@@ -156,14 +122,19 @@ h2 {
   display: inline-block;
   vertical-align: top;
 }
-.player-segmentation-chart {
-  width: 600px;
-}
-.player-bet-chart {
-  width: 300px;
-  margin: 0 0 0 40px;
+.show-pie-title {
+  height: 320px;
 }
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 .css-1wvv9v7 {
   left: calc(50% - 30px);
+}
+.player-segmentation-chart .css-1wvv9v7 {
+  top: calc(50% - 70px);
+}
+.player-bet-chart .css-1wvv9v7 {
+  top: calc(50% - 20px);
+}
+.show-pie-title .css-1wvv9v7 {
+  top: calc(50% - 45px);
 }

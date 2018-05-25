@@ -1,8 +1,8 @@
 import { Switch, Route } from 'react-router-dom'
 import React from 'react'
 
-import ListProfilContainer from './app/profil/containers'
 import TabPlayersContainer from './app/players/containers'
+import TabEcreditsContainer from './app/ecredits/containers'
 import NotFound from './app/notFound/NotFound'
 
 
@@ -10,8 +10,9 @@ import NotFound from './app/notFound/NotFound'
 function Routes() {
   return (
     <Switch>
-      <Route path="/profils" component={ListProfilContainer} />
+      <Route path="/preview" component={TabPlayersContainer} />
       <Route path="/players" component={TabPlayersContainer} />
+      <Route path="/ecredits" component={TabEcreditsContainer} />
       <Route path="*" component={NotFound} />
     </Switch>
   )

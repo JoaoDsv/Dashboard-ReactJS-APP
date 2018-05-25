@@ -9,6 +9,8 @@ import { ic_group as playersIcon } from 'react-icons-kit/md/ic_group'
 import { ic_local_atm as ecreditsIcon } from 'react-icons-kit/md/ic_local_atm'
 import { ic_settings as settingsIcon } from 'react-icons-kit/md/ic_settings'
 import { ic_chevron_right as arrowIcon } from 'react-icons-kit/md/ic_chevron_right'
+import logoFdj from '../../assets/images/logoFdj.svg'
+import userPicture from '../../assets/images/userPicture.jpg'
 
 
 // Side menu component who lead the redirect
@@ -20,22 +22,34 @@ class SideMenu extends React.Component {
         name: 'Guillaume Kordonian',
         job: 'Responsable Open Innovation FDJ',
       },
+      tabColorsAssociationMap: {
+        '/preview': 'red',
+        '/players': '#8F39C1',
+        '/ecredits': '#EF5F48',
+        '/settings': '#EF5F48',
+      },
+      currentTabColor: '#8F39C1',
     }
+  }
+
+  componentDidMount() {
+    if (this.props.location.pathname === '/') this.props.history.push('/players')
   }
 
   // Redirection to clicked tab
   handleRedirect(tab) {
     this.props.history.push(tab)
+    this.setState({ currentTabColor: this.state.tabColorsAssociationMap[tab] })
   }
 
   render() {
     return (
       <div className="side-menu-container col-md-3 col-lg-3">
         <div className="user-profile-container">
-          <div className="fdj-logo" />
-          <div className="user-profile_picture" />
-          {/* <img className="fdj-logo" alt="fdj logo" src="" />
-          <img className="user-profile_picture" alt="user" src="" /> */}
+          <div className="fdj-logo">
+            <img src={logoFdj} alt="Française des Jeux logo" />
+          </div>
+          <img src={userPicture} className="user-profile_picture" alt="user" />
           <h1 className="user-profile_name">
             {this.state.user.name}
           </h1>
@@ -45,9 +59,9 @@ class SideMenu extends React.Component {
         </div>
         <SideNav
           style={{ 'text-align': 'center' }}
-          defaultSelected={this.props.location.pathname}
+          defaultSelected={this.props.location.pathname === '/' ? '/ecredits' : this.props.location.pathname}
           highlightColor="#fff"
-          highlightBgColor="#800080"
+          highlightBgColor="#EF5F48"
           onItemSelection={(tab) => { this.handleRedirect(tab) }}
         >
           <Nav id="/preview">
@@ -56,7 +70,9 @@ class SideMenu extends React.Component {
             </NavIcon>
             <NavText className="side-menu_label">
               Preview
-              {this.props.location.pathname === '/preview' && <SvgIcon className="side-menu_arrow" size={30} icon={arrowIcon} />}
+              {(this.props.location.pathname === '/preview' || this.props.location.pathname === '/') &&
+                <SvgIcon className="side-menu_arrow" size={30} icon={arrowIcon} />
+              }
             </NavText>
           </Nav>
           <Nav id="/players">
