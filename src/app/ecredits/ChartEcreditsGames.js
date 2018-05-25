@@ -6,7 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'rec
 
 
 // Bar chart component, showing ecredits spent and not-spent
-class ChartEcreditsSpending extends React.Component {
+class ChartEcreditsGames extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
@@ -20,7 +20,7 @@ class ChartEcreditsSpending extends React.Component {
   render() {
     return (
       <div className="chart-container bar-chart ecredits-spending-chart">
-        <h3>E-credits utilisés et non-utilisés</h3>
+        <h3>E-credits utilisés par catégorie de jeux</h3>
 
         {this.props.loading ?
           <BounceLoader
@@ -67,14 +67,14 @@ class ChartEcreditsSpending extends React.Component {
   }
 }
 
-ChartEcreditsSpending.propTypes = {
+ChartEcreditsGames.propTypes = {
   data: PropTypes.array,
   loading: PropTypes.bool,
 }
 
-ChartEcreditsSpending.defaultProps = {
+ChartEcreditsGames.defaultProps = {
   data: [],
   loading: true,
 }
 
-export default ChartEcreditsSpending
+export default ChartEcreditsGames

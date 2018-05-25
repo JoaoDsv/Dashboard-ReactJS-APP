@@ -6,7 +6,7 @@ body {
   height: 100%;
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  background-color: #6c6c6c;
+  background-color: #5c5c5c;
 }
 .app-container {
   display: grid;
@@ -24,13 +24,14 @@ body {
   height: 100%;
   vertical-align: top;
   text-align: center;
-  background-color: #6c6c6c;
+  background-image: url("../../assets/images/fadeBg.png");
   box-sizing: border-box;
   padding: 40px;
 }
 .chart-container {
   font-size: 0.8em;
-  background-color: #484848;
+  text-align: left;
+  background-color: #383838;
   margin: 0 0 10px 0;
 }
 .bar-chart {
@@ -46,7 +47,7 @@ h3 {
   font-size: 1.3em;
   font-weight: 400;
   padding: 20px 0 10px 20px;
-  border-bottom: 1px solid #6c6c6c;
+  border-bottom: 1px solid #75598b;
   margin: 0 0 10px 0;
 }
 h4 {

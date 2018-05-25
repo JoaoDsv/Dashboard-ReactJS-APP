@@ -20,7 +20,7 @@ class ChartPlayersSegmentation extends React.Component {
   render() {
     return (
       <div className="chart-container bar-chart player-segmentation-chart">
-        <h3>Nombre de joueurs par catégorie</h3>
+        <h3>Joueurs par catégorie</h3>
 
         {this.props.loading ?
           <BounceLoader
