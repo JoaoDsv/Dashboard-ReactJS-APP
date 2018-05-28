@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BounceLoader } from 'react-spinners'
 
-import { PieChart, Pie, Tooltip, Legend, Cell } from 'recharts'
+import { PieChart, Pie, Legend, Cell } from 'recharts'
 
 
 // Pie chart component, showing ecredits' amounts
@@ -11,9 +11,10 @@ class ChartEcreditsAmount extends React.Component {
     super(props, context)
     this.state = {
       legend: [
-        { value: '< 10€', type: 'rect', color: '#EF5F48' },
-        { value: '10 à 20€', type: 'rect', color: '#7F3326' },
-        { value: '> 20€', type: 'rect', color: '#FFA626' },
+        { value: '< 1€', type: 'rect', color: '#FFA626' },
+        { value: '1€ à 2€', type: 'rect', color: '#7F3326' },
+        { value: '2€ à 5€', type: 'rect', color: '#FD9B8C' },
+        { value: '> 5€', type: 'rect', color: '#EF5F48' },
       ],
     }
   }
@@ -21,11 +22,11 @@ class ChartEcreditsAmount extends React.Component {
   render() {
     return (
       <div className="chart-container pie-chart ecredits-amount-chart">
-        <h3>E-credits utilisés en fonction du montant</h3>
+        <h3>E-credits utilisés en fonction du montant versé</h3>
 
         {this.props.loading ?
           <BounceLoader
-            color={'#d3d3d3'}
+            color="#d3d3d3"
             loading={this.props.loading}
           />
         :
@@ -43,13 +44,10 @@ class ChartEcreditsAmount extends React.Component {
               align="center"
               wrapperStyle={{ bottom: -30 }}
             />
-            <Tooltip
-              wrapperStyle={{ backgroundColor: '#2e2e2e' }}
-            />
             <Pie
               data={this.props.data}
-              dataKey="betsCount"
-              nameKey="betsAmount"
+              dataKey="ecreditsCount"
+              nameKey="ecreditsAmount"
               innerRadius={65}
               outerRadius={85}
               label
@@ -57,6 +55,7 @@ class ChartEcreditsAmount extends React.Component {
               <Cell fill="#FFA626" />
               <Cell fill="#7F3326" />
               <Cell fill="#FD9B8C" />
+              <Cell fill="#EF5F48" />
             </Pie>
 
           </PieChart>

@@ -4,19 +4,17 @@ body
   font-family 'Roboto', sans-serif
   background-color $greyScorpion
 
-
-
 .app-container
   display grid
-  grid-template-columns 250px 1fr
+  grid-template-columns 270px 1fr
   height 100%
 
 .side-menu-container
-  width 250px
+  width 270px
   height 100%
   vertical-align top
   color $greyDove
-  background-color $greyMineShaft
+  background-color $greyCarbon
 
 .tab-container
   height 100%
@@ -26,10 +24,28 @@ body
   box-sizing border-box
   padding 40px
 
+.period-picker-container
+  position relative
+  height: 55px
+  width calc(600px + 40px + 300px)
+  text-align left
+  vertical-align center
+  background-color $greyCarbon
+  margin auto
+  margin-bottom 30px
+
+.left-chart-group-container
+  display inline-block
+  vertical-align top
+
+.right-chart-group-container
+  display inline-block
+  vertical-align top
+
 .chart-container
   font-size .8em
   text-align left
-  background-color $greyMineShaft
+  background-color $greyCarbon
   margin 0 0 10px 0
 
 .bar-chart
@@ -40,6 +56,7 @@ body
   height 270px
   width 300px
   margin 0 0 0 40px
+
 
 h3
   font-size 1.3em

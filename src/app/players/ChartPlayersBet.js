@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BounceLoader } from 'react-spinners'
 
-import { PieChart, Pie, Tooltip, Legend, Cell } from 'recharts'
+import { PieChart, Pie, Legend, Cell } from 'recharts'
 
 
 // Pie chart component, showing payers' bets
@@ -25,7 +25,7 @@ class ChartPlayersBet extends React.Component {
 
         {this.props.loading ?
           <BounceLoader
-            color={'#d3d3d3'}
+            color="#d3d3d3"
             loading={this.props.loading}
           />
         :
@@ -43,9 +43,6 @@ class ChartPlayersBet extends React.Component {
                 iconSize={22}
                 align="right"
                 wrapperStyle={{ right: 5 }}
-              />
-              <Tooltip
-                wrapperStyle={{ backgroundColor: '#2e2e2e' }}
               />
               <Pie
                 data={this.props.data}

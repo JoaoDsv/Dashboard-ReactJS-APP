@@ -14,7 +14,6 @@
   display block
   height 80px
   width 80px
-  background-color cyan
   border-radius 50%
   margin auto
   margin-top 40px
@@ -34,17 +33,44 @@
 
 .side-menu_icon
   vertical-align middle
-  margin 8px 0 8px 40px
+  margin 8px 0 8px 80px
 
 .side-menu_label
+  display inline
   position relative
+  width 60px
   font-size .95em
-  text-indent -6px
   vertical-align middle
-  margin 8px 0 8px 0
+  margin 8px 8px 0
 
 .side-menu_arrow
   position absolute
   top -.4em
-  right -50px
+  right -42px
   vertical-align middle
+
+.overview_arrow
+  right -20px
+
+.ecredits_arrow
+  right -36px
+
+.side-menu_highlight
+  position absolute
+  top -1.25em
+  left -142px
+  background-color transparent
+  width 60px
+  height 56px
+
+.overview_highlight
+  background-image linear-gradient(to right, #EF5F48, $greyMineShaft);
+
+.players_highlight
+  background-image linear-gradient(to right, #8F39C1, $greyMineShaft);
+
+.ecredits_highlight
+  background-image linear-gradient(to right, #EF5F48, $greyMineShaft);
+
+.settings_highlight
+  background-image linear-gradient(to right, #8F39C1, $greyMineShaft);

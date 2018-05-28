@@ -11,8 +11,8 @@ class ChartEcreditsSpending extends React.Component {
     super(props, context)
     this.state = {
       legend: [
-        { value: 'Cette semaine', type: 'rect', color: '#E49628', id: 'currentWeek' },
-        { value: 'La semaine dernière', type: 'rect', color: '#EF5F48', id: 'previousWeek' },
+        { value: 'Ce trimestre', type: 'rect', color: '#EF5F48', id: 'currentPeriod' },
+        { value: 'Le trimestre dernier', type: 'rect', color: '#E49628', id: 'previousPeriod' },
       ],
     }
   }
@@ -24,7 +24,7 @@ class ChartEcreditsSpending extends React.Component {
 
         {this.props.loading ?
           <BounceLoader
-            color={'#d3d3d3'}
+            color="#d3d3d3"
             loading={this.props.loading}
           />
         :
@@ -42,24 +42,19 @@ class ChartEcreditsSpending extends React.Component {
               wrapperStyle={{ right: -20 }}
               iconSize={24}
             />
-            <CartesianGrid horizontal vertical={false} strokeDasharray="3 2" />
-            <XAxis dataKey="segm" tick={{ fill: '#FFFFFF' }} />
+            <CartesianGrid horizontal vertical={false} strokeDasharray="2 2" />
+            <XAxis dataKey="specific" tickLine={false} tick={{ fill: '#FFFFFF' }} />
             <YAxis />
             <Tooltip
               wrapperStyle={{ backgroundColor: '#2e2e2e' }}
             />
 
-            <Bar dataKey="preEuromillion" stackId="previousWeek" fill="#E49628" barSize={30} />
-            <Bar dataKey="preLoto" stackId="previousWeek" fill="#FFC169" barSize={30} />
+            <Bar dataKey="preEcreditsUtilises" stackId="previousPeriod" fill="#E49628" barSize={30} />
+            <Bar dataKey="preEcreditsNonUtilises" stackId="previousPeriod" fill="#FFC169" barSize={30} />
 
-            <Bar dataKey="preTirageMixte" stackId="previousWeek" fill="#E49628" barSize={20} />
-            <Bar dataKey="preEuromillionMixte" stackId="previousWeek" fill="#FFC169" barSize={20} />
+            <Bar dataKey="ecreditsUtilises" stackId="currentPeriod" fill="#EF5F48" barSize={90} />
+            <Bar dataKey="ecreditsNonUtilises" stackId="currentPeriod" fill="#FD8470" barSize={90} />
 
-            <Bar dataKey="euromillion" stackId="currentWeek" fill="#EF5F48" barSize={90} />
-            <Bar dataKey="loto" stackId="currentWeek" fill="#FD8470" barSize={90} />
-
-            <Bar dataKey="tirageMixte" stackId="currentWeek" fill="#EF5F48" barSize={60} />
-            <Bar dataKey="euromillionMixte" stackId="currentWeek" fill="#FD8470" barSize={60} />
           </BarChart>
         }
       </div>

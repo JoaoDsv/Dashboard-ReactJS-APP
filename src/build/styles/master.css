@@ -10,15 +10,15 @@ body {
 }
 .app-container {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 270px 1fr;
   height: 100%;
 }
 .side-menu-container {
-  width: 250px;
+  width: 270px;
   height: 100%;
   vertical-align: top;
   color: #707070;
-  background-color: #383838;
+  background-color: #393939;
 }
 .tab-container {
   height: 100%;
@@ -28,10 +28,28 @@ body {
   box-sizing: border-box;
   padding: 40px;
 }
+.period-picker-container {
+  position: relative;
+  height: 55px;
+  width: calc(600px + 40px + 300px);
+  text-align: left;
+  vertical-align: center;
+  background-color: #393939;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.left-chart-group-container {
+  display: inline-block;
+  vertical-align: top;
+}
+.right-chart-group-container {
+  display: inline-block;
+  vertical-align: top;
+}
 .chart-container {
   font-size: 0.8em;
   text-align: left;
-  background-color: #383838;
+  background-color: #393939;
   margin: 0 0 10px 0;
 }
 .bar-chart {
@@ -60,6 +78,30 @@ h4 {
   padding: 0 0 20px 0;
   margin: 0;
 }
+.previous-period-arrow {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  color: #707070;
+  cursor: pointer;
+}
+.next-period-arrow {
+  top: 8px;
+  left: 65px;
+  position: absolute;
+  color: #707070;
+  cursor: pointer;
+}
+.previous-period-arrow:hover {
+  color: #fff;
+}
+.next-period-arrow:hover {
+  color: #fff;
+}
+.current-period-text {
+  margin: 0 0 0 120px;
+  line-height: 55px;
+}
 .user-profile-container {
   height: 230px;
   width: 100%;
@@ -76,7 +118,6 @@ h4 {
   display: block;
   height: 80px;
   width: 80px;
-  background-color: #0ff;
   border-radius: 50%;
   margin: auto;
   margin-top: 40px;
@@ -96,46 +137,83 @@ h4 {
 }
 .side-menu_icon {
   vertical-align: middle;
-  margin: 8px 0 8px 40px;
+  margin: 8px 0 8px 80px;
 }
 .side-menu_label {
+  display: inline;
   position: relative;
+  width: 60px;
   font-size: 0.95em;
-  text-indent: -6px;
   vertical-align: middle;
-  margin: 8px 0 8px 0;
+  margin: 8px 8px 0;
 }
 .side-menu_arrow {
   position: absolute;
   top: -0.4em;
-  right: -50px;
+  right: -42px;
   vertical-align: middle;
+}
+.overview_arrow {
+  right: -20px;
+}
+.ecredits_arrow {
+  right: -36px;
+}
+.side-menu_highlight {
+  position: absolute;
+  top: -1.25em;
+  left: -142px;
+  background-color: transparent;
+  width: 60px;
+  height: 56px;
+}
+.overview_highlight {
+  background-image: linear-gradient(to right, #ef5f48, #3e3e3e);
+}
+.players_highlight {
+  background-image: linear-gradient(to right, #8f39c1, #3e3e3e);
+}
+.ecredits_highlight {
+  background-image: linear-gradient(to right, #ef5f48, #3e3e3e);
+}
+.settings_highlight {
+  background-image: linear-gradient(to right, #8f39c1, #3e3e3e);
 }
 .ecredits-amount-chart {
   height: 425px;
   margin: 0 0 10px 40px;
 }
-.left-chart-group-container {
-  display: inline-block;
-  vertical-align: top;
+.ecredits-segmentation-chart {
+  width: 300px;
+  height: 425px;
+  margin: 0 0 0 40px;
 }
-.right-chart-group-container {
-  display: inline-block;
-  vertical-align: top;
+.line-chart {
+  height: 330px;
 }
 .show-pie-title {
   height: 320px;
 }
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+.__rsnav___item {
+  background-color: #3e3e3e;
+  margin: 3px 0 3px 0;
+}
 .css-1wvv9v7 {
   left: calc(50% - 30px);
 }
-.player-segmentation-chart .css-1wvv9v7 {
+.bar-chart .css-1wvv9v7 {
   top: calc(50% - 70px);
 }
-.player-bet-chart .css-1wvv9v7 {
+.pie-chart .css-1wvv9v7 {
   top: calc(50% - 20px);
 }
 .show-pie-title .css-1wvv9v7 {
   top: calc(50% - 45px);
+}
+.ecredits-amount-chart .css-1wvv9v7 {
+  top: calc(50% - 80px);
+}
+.line-chart .css-1wvv9v7 {
+  top: calc(50% - 70px);
 }

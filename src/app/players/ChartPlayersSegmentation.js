@@ -24,7 +24,7 @@ class ChartPlayersSegmentation extends React.Component {
 
         {this.props.loading ?
           <BounceLoader
-            color={'#d3d3d3'}
+            color="#d3d3d3"
             loading={this.props.loading}
           />
         :
@@ -42,8 +42,8 @@ class ChartPlayersSegmentation extends React.Component {
               wrapperStyle={{ right: -20 }}
               iconSize={24}
             />
-            <CartesianGrid horizontal vertical={false} strokeDasharray="3 2" />
-            <XAxis dataKey="segm" tick={{ fill: '#FFFFFF' }} />
+            <CartesianGrid horizontal vertical={false} strokeDasharray="2 2" />
+            <XAxis dataKey="segm" tickLine={false} tick={{ fill: '#FFFFFF' }} />
             <YAxis />
             <Tooltip
               wrapperStyle={{ backgroundColor: '#2e2e2e' }}

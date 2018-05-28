@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 
-import ecreditsReducer from './app/ecredits/reducers'
+import overviewReducer from './app/overview/reducers'
 import playersReducer from './app/players/reducers'
+import ecreditsReducer from './app/ecredits/reducers'
 
 
 const allReducers = combineReducers({
+  overviewReducer,
   playersReducer,
   ecreditsReducer,
 })
